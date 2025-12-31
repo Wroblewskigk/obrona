@@ -1,11 +1,13 @@
 # 01 Paradygmaty programowania obiektowego
 
 ## Programowanie obiektowe
-Programowanie obiektowe organizuje kod wokół klas i obiektów, gdzie klasa definiuje atrybuty i metody odpowiedzialne kolejno za stan obiektu i jego zachowanie. A obiekt jest instancją klasy.
+Programowanie obiektowe organizuje kod wokół klas i obiektów, gdzie klasa definiuje atrybuty i metody odpowiedzialne kolejno za stan obiektu i jego zachowanie. Obiekt jest instancją danej klasy.
 
 ## Założenia paradygmatu
 ### Abstrakcja 
-Każdy obiekt w systemie służy jako model abstrakcyjnego „wykonawcy”, który może wykonywać pracę, opisywać i zmieniać swój stan oraz komunikować się z innymi obiektami w systemie bez ujawniania, w jaki sposób zaimplementowano dane cechy. Procesy, funkcje lub metody mogą być również abstrahowane, a kiedy tak się dzieje, konieczne są rozmaite techniki rozszerzania abstrakcji. Metaforycznym przykładem abstrakcji z codziennego życia jest ekspres do kawy. Nie interesuje nas to w jaki sposób robi on naszą kawę, a jedynie to, że jeśli wcisnę odpowiedni guzik to mogę się jej spodziewać.
+Abstrakcja to proces wydzielający istotne cechy obiektów i pomijający te nieistotne. Prowadzi do tworzenia pojęć ogólnych, oderwanych od konkretnej rzeczywistości. W programowaniu obiektowym polega upraszczaniu złożonych systemów przez izolowanie najważniejszych cech obiektu lub metody i ukrywanie szczegółów implementacji tzw. "czarna skrzynka". Metaforycznym przykładem abstrakcji z codziennego życia jest ekspres do kawy. Nie interesuje nas to w jaki sposób robi on naszą kawę, a jedynie to, że jeśli wcisnę odpowiedni guzik to mogę się jej spodziewać.
+
+# PONIŻEJ NIESPRAWDZONE
 
 ### Enkapsulacja  
 Polega na ukrywaniu pewnych danych składowych oraz metod obiektów danej klasy tak, aby były one dostępne tylko metodom wewnętrznym danej klasy lub funkcjom zaprzyjaźnionym. Takie podejście zapewnia, że obiekt nie może zmieniać stanu wewnętrznego innych obiektów w nieoczekiwany sposób. Tylko własne metody obiektu są uprawnione do zmiany jego stanu. Każdy typ obiektu prezentuje innym obiektom swój interfejs, który określa dopuszczalne metody współpracy.
