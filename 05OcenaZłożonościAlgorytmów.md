@@ -14,10 +14,10 @@ Na przykład, sortowanie tablicy to problem, gdzie konkretne liczby np. 7, 3, 5,
 ### Algorytm
 Algorytm to skończony zbiór jasno zdefiniowanych, logicznych kroków i instrukcji, które krok po kroku prowadzą do rozwiązania konkretnego problemu lub wykonania określonego zadania, przekształcając dane wejściowe w pożądane dane wyjściowe w **skończonym** czasie
 
-# PONIŻEJ NIESPRAWDZONE
-
 ### Złożoność obliczeniowa 
-Ilość zasobów potrzebnych do rozwiązania problemu.
+Złożoność obliczeniowa to miara zasobów czasu i pamięci potrzebnych algorytmowi do rozwiązania **instancji?** problemu, zależna od rozmiaru danych wejściowych $n$ i wyrażana w notacji Wielkiego $O$ np. $O(n)$, określająca, jak efektywnie algorytm skaluje się wraz ze wzrostem ilości danych wejściowych.
+
+# PONIŻEJ NIESPRAWDZONE
 
 ## Typy złożoności obliczeniowej
 
