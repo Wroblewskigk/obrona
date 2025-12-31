@@ -22,7 +22,7 @@ Złożoność obliczeniowa to miara zasobów czasu i pamięci potrzebnych algory
 - Złożoność czasowa: w jakim tępie rośnie ilość czasu potrzebna do wykonania algorytmu, w zależności od rozmiaru instancji problemu.
 - Złożoność pamięciowa w jakim tępie rośnie ilość pamięci potrzebnej do przechowania wszystkich struktur danych wymaganaych przez algorytm, w zależności od rozmiaru instancji problemu.
 
-### ```Ze względu na podejście TO NIE MA SENSU?```
+### ```Ze względu na podejście TO NIE MA SENSU? / BULLSHIT?```
 - Pesymistyczne - złożoność realnego problemu będzie w najgorszym przypadku zgodna z oszacowaniem
 - optymistyczne - złożoność realnego problemu będzie w najlepszym przypadku zgodna z oszacowaniem
 - Oczekiwane - uśrednienie podejścia optymistycznego i pesymistycznego
