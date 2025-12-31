@@ -15,10 +15,11 @@ Realizacja enkapsulacji może przebiegać poprzez parametry dostępu:
 - ```protected``` - Dostęp również po klasie po niej dziedziczącej
 - ```public``` - Dostęp do danych w każdym miejscu programu
 
-# PONIŻEJ NIESPRAWDZONE
-
 ### Dziedziczenie (Kompozycja)
-Współdzielenie funkcjonalności pomiędzy klasami. Klasa "dziecka" może mieć swoje funkcjonalności oraz otrzymać funkcjonalności "rodzica" po którym dziedziczy. Z jednej klasy "rodzica" można uzyskać wiele klas potomnych. Klasy dziecka posiadają oprócz swoich funkcjonalności, również kompletny interfejs  metod i atrybutów udostępniany przez klasę rodzica
+Polega na stworzeniu nowej klasy, zwanej podklasą, na podstawie istniejącej już
+klasy bazowej, zwanej nadklasą. Wspólne atrybuty i metody są definiowane w nadklasie i potem dziedziczone przez podklasę. Dziedziczenie umożliwia definiowanie wyspecjalizowanych obiektów na podstawie bardziej ogólnych. Nie trzeba wtedy redefiniować wszystkich funkcjonalności, więc wymagana jest implementacja tylko tych, których nie ma obiekt ogólniejszy. Wyróżniamy dziedziczenie pojedyncze i wielokrotne. Jeżli nowa klasa jest podklasą tylko jednej klasy bazowej, to wtedy mówimy o dziedziczeniu pojedynczym. Analogicznie dziedziczone jest po więcej niż jednej nadklasie mamy do czynienia z dziedziczeniem wielokrotnym.
+
+# PONIŻEJ NIESPRAWDZONE
 
 ### Polimorfizm (Wielopostaciowość)
 Mechanizmy pozwalające programiście używać wartości, zmiennych i podprogramów
