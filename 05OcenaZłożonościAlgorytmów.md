@@ -43,7 +43,7 @@ Złożoność obliczeniowa to miara zasobów czasu i pamięci potrzebnych algory
 - $O(c^n), O(n!)$ - Złożoność wykładnicza 
 
 ## Klasy problemów np 
-| Klasa problemu NP | Sprawdzenie rozwiązania | Znalezienie rozwiązania |
+| Klasa problemu | Sprawdzenie rozwiązania | Znalezienie rozwiązania |
 | - | - | - |
 | Problem P | Złożoność wielomianowa: $O(n^x)$ | Złożoność wielomianowa: $O(n^x)$ | 
 Problem NP | Złożoność wielomianowa: $O(n^x)$ | Nie obalono i nie odkryto złożonośći wielomianowej $O(n^x)$. Istnieją rozwiązania wykładnicze $O(X^n)$ |
