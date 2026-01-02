@@ -22,14 +22,15 @@ Złożoność obliczeniowa to miara zasobów czasu i pamięci potrzebnych algory
 - Złożoność czasowa: w jakim tępie rośnie ilość czasu potrzebna do wykonania algorytmu, w zależności od rozmiaru instancji problemu.
 - Złożoność pamięciowa w jakim tępie rośnie ilość pamięci potrzebnej do przechowania wszystkich struktur danych wymaganaych przez algorytm, w zależności od rozmiaru instancji problemu.
 
-### ```Ze względu na podejście TO NIE MA SENSU? / BULLSHIT?```
-- Pesymistyczne - złożoność realnego problemu będzie w najgorszym przypadku zgodna z oszacowaniem
-- optymistyczne - złożoność realnego problemu będzie w najlepszym przypadku zgodna z oszacowaniem
-- Oczekiwane - uśrednienie podejścia optymistycznego i pesymistycznego
+### Ze względu na podejście
+- Pesymistyczna -  jest to najgorszy możliwy przypadek danych wejściowych, gdzie algorytm wykonuje się najdłużej, posiada najwięcej operacji dominujących, zabiera najwięcej pamięci, wykorzystuje najwięcej wątków i tym podobne
+- Optymistyczna - przypadek, gdzie dane są tak dobrane, że występuje najmniejsza ilość operacji dominujących i podobnych
+- Przeciętna / Oczekiwana / Średnia - wartość oczekiwana zasobów wykorzystywanych przez program w zwykłym przypadku.
 
 ## Przykładowe notacje
-
+- $o(f(n)) \implies < c⋅f(n)$
 - $O(f(n)) \implies ≤ c⋅f(n) \implies$ Algorytm wykonuje się z **maksymalnie** taką złożonością
+- $ω(f(n)) \implies > c⋅f(n)$
 - $Ω(f(n)) \implies ≥ c⋅f(n) \implies$ Algorytm wykonuje się z **conajmniej** taką złożonością
 - $Θ(f(n)) \implies$ Algorytm wykonuje się **dokładnie** z taką złożonością
 
@@ -40,7 +41,8 @@ Złożoność obliczeniowa to miara zasobów czasu i pamięci potrzebnych algory
 - $O(n)$ - Złożoność liniowa
 - $O(n log n)$ - Złożoność liniowo-logarytmiczna
 - $O(n^k)$ - Złożoność wielomianowa
-- $O(c^n), O(n!)$ - Złożoność wykładnicza 
+- $O(c^n)$ - Złożoność wykładnicza 
+- $O(n!)$ - Złożoność rzędu n-silnia 
 
 ## Klasy problemów np 
 | Klasa problemu | Sprawdzenie rozwiązania | Znalezienie rozwiązania |
