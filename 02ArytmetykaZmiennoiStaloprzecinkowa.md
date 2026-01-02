@@ -1,3 +1,4 @@
+# 02 Arytmetyka stało i zmiennoprzecinkowa
 
 ## Arytmetyka stałoprzecinkowa
 
@@ -11,9 +12,9 @@ Arytmetyka zmiennoprzecinkowa (ang. floating-point arithmetic) bazuje na notacji
 ​
 Standard IEEE 754 unormował arytmetykę zmiennoprzecinkową, gwarantując identyczne obliczenia na wszystkich komputerach. Format ten pozwala reprezentować znacznie szerszy zakres wartości: dla tego samego rozmiaru słowa zmiennoprzecinkowe mogą reprezentować liczby od 1.234567 do 1234567000000, podczas gdy stałoprzecinkowe są ograniczone do zakresu typu 123.45, 1234.56, 12345.67 itd.
 
-## Spowiedź studenta
+# Spowiedź studenta
 
-### Dlaczego nie używamy tylko systemu ZM? (GPT)
+## Dlaczego nie używamy tylko systemu ZM? (GPT)
 
 Problemy Praktyczne Systemu Znak-Moduł
 Problem reprezentacji zera: System posiada dwie reprezentacje zera — +0 (00000000) i -0 (10000000). Ta redundancja zmniejsza efektywnie użyteczny zakres liczb i komplikuje logikę porównań w sprzęcie. Warunek if (x == 0) wymaga sprawdzenia dwóch bitowych konfiguracji.
@@ -27,7 +28,7 @@ Kod U2, który dominuje w nowoczesnych komputerach, wyeliminował te problemy: p
 
 **Jak unika tych problemów IEEE754?**
 
-### Jakie są inne standardy IEEE?
+## Jakie są inne standardy IEEE?
 
 | Aspekt         | IEEE 754 (1985/2008)   | IEEE 854 (1987)                                 | IEEE 754-2019 |
 | -------------- | ---------------------- | ----------------------------------------------- | ------------------------- |
@@ -36,7 +37,7 @@ Kod U2, który dominuje w nowoczesnych komputerach, wyeliminował te problemy: p
 | Precyzje       | Single/double/extended | Basic/extended (single/double)                  | Jak wyżej + extendable    |
 | Zastosowanie   | Powszechne w CPU       | Rzadkie, teoretyczne myszka.kmim.pwr​           | Standard w ML/AI, finanse |
 
-### Czym się różni U1 od U2?
+## Czym się różni U1 od U2?
 
 Kod Uzupełnień do Jedności (U1): Liczby ujemne koduje się poprzez bitową negację (inwersję) wszystkich bitów liczby dodatniej. Dla liczby dodatniej n bitów: -x = NOT(x).
 
@@ -49,7 +50,7 @@ Dwie Reprezentacje Zera. U1 posiada dwie różne reprezentacje zera: +0 jako 000
 - Komplikację logiki porównań (if (x == 0) wymaga sprawdzenia obu reprezentacji)
 - Nieefektywne wykorzystanie przestrzeni bitowej
 
-### Jakie znasz błędy i problemy w systemach arytmetyki komputerowej zmiennoprzecinkowej i stałoprzecinkowej (GPT)
+## Jakie znasz błędy i problemy w systemach arytmetyki komputerowej zmiennoprzecinkowej i stałoprzecinkowej (GPT)
 
 Błędy w Arytmetyce Zmiennoprzecinkowej
 1. Błędy Reprezentacji i Zaokrąglenia
@@ -128,7 +129,7 @@ W arytmetyce stałoprzecinkowej:
 
 - Monitorować overflow jawnie poprzez testy i assertions
 
-### Dlaczego wykładnik może być ujemny w IEEE754? (GPT)
+## Dlaczego wykładnik może być ujemny w IEEE754? (GPT)
 
 Wykładnik, liczba pozycji określa zakres dynamiczny
 Mnożnik, liczba pozycji określa dokładność
@@ -153,7 +154,7 @@ Liczba 256 = 1.0 × 2^8:
 
 - Wykładnik: 8 (dodatni, bo liczba jest większa niż 1)
 
-### Czym się różni quiet NaN od signaled NaN? (Wikipedia)
+## Czym się różni quiet NaN od signaled NaN? (Wikipedia)
 
 Quiet NaN
 
@@ -173,3 +174,15 @@ A complex number
 When encountered, a trap handler could decode the sNaN and return an index to the computed result. In practice, this approach is faced with many complications. The treatment of the sign bit of NaNs for some simple operations (such as absolute value) is different from that for arithmetic operations. Traps are not required by the standard.
 
 When an operation results in a quiet NaN, there is no indication that anything is unusual until the program checks the result and sees a NaN. That is, computation continues without any signal from the floating point unit (FPU) or library if floating-point is implemented in software. A signalling NaN will produce a signal, usually in the form of exception from the FPU. Whether the exception is thrown depends on the state of the FPU.
+
+# Co ma zostać wymienione
+
+- Arytmetyka stałoprzecinkowa
+- Przykłady systemów stałoprzecinkowych
+- Arytmetyka zmiennoprzecinkowa
+- Przykłady systemów zmiennoprzecinkowych
+- IEEE754-1985, IEEE854-1987, IEEE754-2019
+- Liczby pojedynczej, podwójnej i rozszerzonej precyzji
+- Tryby zaokrąglania IEEE
+- Znaki specjalne IEEE: nieskończoność, zero, wartość zdenormalizowana, sNAN, qNAN
+- Wyjątki
