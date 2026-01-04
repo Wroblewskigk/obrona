@@ -47,11 +47,17 @@ Diagram klas przedstawia klasy występujące w systemie i relacje pomiędzy nimi
 
 Możliwe relacje w diagramie klas:
 
-- Zależność
-- Asocjacja
-- Agregacja częściowa
-- Kompozycja / Agregacja całkowita
-- Dziedziczenie / Uogólnienie
+- **Zależność:** Zależność to najsłabszy rodzaj relacji pomiędzy obiektami. Mówimy o niej, jeśli pewne zmiany w jednym z obiektów mogą skutkować zmianami w drugim.
+  
+- **Asocjacja:** Asocjacja to najluźniejsza relacja związana z wzajemnym oddziaływaniem klas. Oznacza ona, że jeden obiekt chwilowo wykorzystuje inny lub wchodzi z nim w jakąś interakcję. Obiekty mogą istnieć niezależnie od siebie.
+  
+- **Agregacja / Agregacja częściowa:** Agregacja to rodzaj asocjacji. Różni się od niej tym, że jeden obiekt służy za kontener dla innych obiektów. Dzięki zadeklarowaniu przekazywanego obiektu w konstruktorze, mamy możliwość operacji na przekazanym obiekcie w całym ciele. Mimo to oba obiekty mogą istnieć niezależnie od siebie.
+  
+- **Kompozycja / Agregacja całkowita:** Kompozycja to ostatni i najsilniejszy rodzaj relacji, jakie występują między obiektami. Kompozycja stanowi specjalny rodzaj agregacji. Jak sama nazwa wskazuje – dany obiekt „komponuje się” z innych, czyli składa się z nich. Usunięcie obiektu nadrzędnego spowoduje usunięcie obiektów, które wchodzą w jego skład. Obiekty te nie mogą istnieć niezależnie od siebie. Jako przykładu moglibyśmy użyć naszego ciała, w którego skład wchodzi układ nerwowy. Bez ciała nie moglibyśmy mówić o układzie nerwowym i vice versa.
+
+- **Implementacja:** Implementacja to relacja, w której jedna z klas definiuje pola lub metody zadeklarowane w interfejsie. Po prostu jest to dziedziczenie po interfejsie.
+  
+- **Dziedziczenie / Uogólnienie:** Dziedziczenie to relacja, w której klasa potomna dziedziczy wszystko, co związane z klasą nadrzędną. Dodatkowo taka klasa może rozszerzyć swojego rodzica.
 
 #### Diagram obiektów
 
@@ -69,6 +75,10 @@ Diagramy komponentów są używane w celu rozbicia złożonych systemów na ich 
 
 #### Diagram wdrożenia
 
+Diagram wdrożeniowy przedstawia architekturę wykonania systemu, w tym węzły, takie jak środowisko wykonania sprzętu lub oprogramowania, oraz łączące je oprogramowanie pośredniczące. Schematy wdrożeniowe są zazwyczaj wykorzystywane do wizualizacji fizycznego sprzętu i oprogramowania systemu. Korzystając z niego można zrozumieć, w jaki sposób system będzie fizycznie rozmieszczony na sprzęcie. Diagramy wdrożeniowe pomagają modelować topologię sprzętową systemu w porównaniu z innymi typami diagramów UML, które w większości przypadków przedstawiają logiczne elementy systemu.
+
+https://creately.com/blog/pl/diagramach/samouczek-dotyczacy-diagram-wdrazania/
+
 #### Diagram struktur złożonych
 
 Przedstawia wewnętrzną strukturę obiektu oraz punkty interakcji z innymi obiektami w systemie. Obiekt składa się z części, które reprezentują poszczególne składowe obiektu realizujČce poszczególne funkcje obiektu. Komunikacja pomiędzy obiektem, a jego środowiskiem przebiega poprzez port (oznaczany jako mały prostokąt umieszczony na krawędzi obiektu). Porty są połączone z częściami obiektu, które są odpowiedzialne za realizacje tych funkcji
@@ -77,9 +87,29 @@ Złożone diagramy struktury są rzadko używane, ponieważ ich funkcja jest bar
 
 #### Diagram profilu
 
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-profile-diagram/
+
 ### Diagramy behawioralne / Diagramy zachowań
 
 #### Diagram sekwencji / przebiegu
+
+Diagram sekwencji prezentuje jak współpracują ze sobą grupy obiektów. Zwykle diagram sekwencji tyczy się jednego przypadku użycia. Pokazuje kilka
+przykładowych obiektów i komunikaty między nimi wymieniane z zachowaniem ich kolejności.
+
+Każdy z obiektów przedstawiany jest za pomocą linii czasu. Na każdej linii czasu umieszczane są słupki aktywności reprezentujące chwile, w których użytkownik bierze udział w interakcji. Oznaczają one obecnośd jednej z metod uczestnika na stosie wywołao. 
+
+Możliwe jest również prezentowanie pewnych bloków zdarzeń o specjalnej własności , np. sekcja krytyczna, pętla, instrukcja warunkowa… Wówczas używa się bloków. Na diagramach sekwencji taką grupę operacji obejmuje się prostokątem, w którego lewym górnym narożniku, w pięciokącie umieszcza się słowo kluczowe lub opis określający znaczenie danego bloku nazywane operatorem interakcji
+
+Lista operatorów interakcji prezentuje się następująco:
+- **alt** od alternative, określający warunek wykonania bloku operacji, odpowiadający instrukcji if-else
+- **opt** od optional, reprezentujący instrukcję if (bez else )
+- **par** od parallel, nakazujący wykonad operacje równolegle
+- **critical**, blok atomowy, oznaczający obszar krytyczny
+- **loop**, definiujący pętlę typu for lub while
+- **break**, wykonanie fragmentu i zakooczenie interakcji
+- **seq**, słaba sekwencja (podobnie do współbieżności) dotyczy zdarzeo z kilku linii
+- **ignore**, oznacza, że na diagramie nie pokazano wymienionych komunikatów, chodź mogą wystąpić. 
+- **consider**, działa odwrotnie do ignore.
 
 #### Diagram komunikacji
 
@@ -89,13 +119,17 @@ Diagramy komunikacji, znane również jako diagramy współpracy, są używane d
 
 #### Diagram uwarunkowań czasowych
 
+TLDR; Pamiętasz diagramy z symulatorów na UCiSW? To były diagramy czasowe / diagramy uwarunkowań czasowych
+
 #### Diagram przypadków użycia
 
 Diagramy przypadków użycia są używane do modelowania aktorów w systemie, sposobu działania tych aktorów i interakcji pomiędzy działaniami. Aktorzy są pokazani jako figurki i mogą reprezentować ludzi lub organizacje. Funkcje są pokazane jako czasowniki, które reprezentują działania, a związek pomiędzy aktorami i funkcjami jest pokazany za pomocą prostych strzałek.
 
+```
 Czym może być aktor:
 
 Czym jest przypadek użycia:
+```
 
 #### Diagram aktywności / czynności
 
