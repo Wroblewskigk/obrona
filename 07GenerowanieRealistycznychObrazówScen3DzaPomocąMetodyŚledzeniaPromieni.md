@@ -87,3 +87,5 @@ nawet dla kaǏdego promienia. Ta cecha pozwala na przyspieszenie obliczeŷ.
 - Czym jest ray tracing
 - Algorytm ray tracing'u
 - Wady i zalety ray tracing'u
+
+# Czym jest piksel?
