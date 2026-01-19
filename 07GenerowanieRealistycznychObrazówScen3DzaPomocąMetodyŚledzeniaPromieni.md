@@ -5,7 +5,6 @@
 Algorytm śledzenia promieni jest algorytmem umożliwiającym tworzenie
 obrazów o bardzo wysokim poziomie fotorealizmu. Swoje działanie opiera na fakcie, że światło w jednorodnym ośrodku porusza się po linii prostej. Dlatego symulując przebieg promienii od obserwatora przez rzutnię jesteśmy w stanie określić barwę jaką obserwator powinien zobaczyć.
 
-
 ## Jak działa  metoda śledzenia promieni?
 
 ### Opis w języku naturalnym
