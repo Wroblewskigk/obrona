@@ -1,4 +1,4 @@
-# 06 Jeżyk UML w projektowaniu oprogramowania
+# 06 Język UML w projektowaniu oprogramowania
 
 ## Czym jest UML?
 
