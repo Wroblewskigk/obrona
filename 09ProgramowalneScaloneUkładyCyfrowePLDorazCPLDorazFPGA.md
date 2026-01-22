@@ -30,10 +30,19 @@ Następca układów PAL posiadający możliwość wielokrotnego reprogramowania 
 - CPLD
 - **FPGA field-programmable gate array / bezpośrednio programowalna macierz bramek:**
 
-#### Gate Arrays
+## Podsumowanie
 
-#### Standard Cell
-
-#### Full Custom
-
-# Co ma zostać wymienione
+| Cecha / Właściwość          | **SPLD**                                | **CPLD**                                         | **FPGA**                                           |
+|-----------------------------|-----------------------------------------|--------------------------------------------------|----------------------------------------------------|
+| **Gęstość / Pojemność**     | Kilkadziesiąt - kilkaset bramek.       | Setki - kilka tysięcy bramek.                    | Dziesiątki tysięcy - miliony bramek.              |
+| **Złożoność funkcji**       | Najprostsze funkcje logiczne.          | Złożone funkcje kombiracyjne i sekwencyjne, automaty stanów. | Bardzo złożone systemy, przetwarzanie sygnałów, prototypowanie ASIC. |
+| **Architektura połączeń**   | Prosta matryca wejścia/wyjścia.        | **Matryca połączeń (PIA)** o **stałym, przewidywalnym opóźnieniu**. | **Siatka segmentowych połączeń** o **zmiennym opóźnieniu** (zależnym od trasy). |
+| **Podstawowy blok logiczny**| Bramki AND/OR (PAL: programowalne AND, stałe OR; PLA: programowalne obie). | **Makrokomórki** (zbiór bramek + przerzutnik).   | **CLB (Configurable Logic Block)** oparty na **LUT (Look-Up Table)** + przerzutniki. |
+| **Technologia programowania** | Nieulotna (PROM, EPROM, EEPROM).       | Nieulotna (EEPROM, Flash).                       | Przeważnie **ulotna (SRAM)** – konfiguracja ładuje się z zewnętrznej pamięci. Istnieją nieulotne wersje (Flash). |
+| **Prędkość działania**      | Szybkie dla prostych funkcji.          | Szybkie, deterministyczne opóźnienia.            | Bardzo szybkie, ale opóźnienia zależne od implementacji. |
+| **Zużycie energii**         | Bardzo niskie.                         | Niskie/umiarkowane.                              | Umiarkowane/wysokie (zależne od rozmiaru projektu i technologii). |
+| **Typowe zastosowania**     | Proste dekodery, zastępowanie kilku układów TTL. | **Logika "glue"**, kontrolery interfejsów, złożona logika zastępcza, automaty stanów. | **Systemy na układzie**, przetwarzanie sygnałów (DSP), akceleracja obliczeń, prototypowanie ASIC, sieci neuronowe. |
+| **Cykl projektowy**         | Bardzo szybki i prosty.                | Szybki, przewidywalny.                           | Złożony, wymaga zaawansowanych narzędzi do syntezy, mapowania i routingu. |
+| **Koszt (jednostkowy)**     | Bardzo niski.                          | Niski/umiarkowany.                               | Umiarkowany/wysoki (zależnie od rozmiaru).         |
+| **Elastyczność**            | Bardzo ograniczona.                    | Średnia, dobra dla logiki kombinacyjnej.         | **Bardzo wysoka** – możliwość implementacji dowolnej logiki mieszanej. |
+| **Podsumowanie (Rola)**     | **Podstawowa "logika zastępcza"**.     | **Zaawansowana "logika zastępcza" i prostsze automaty**. | **Platforma systemowa / "System na chipie"**.      |

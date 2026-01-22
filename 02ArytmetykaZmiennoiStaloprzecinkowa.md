@@ -6,6 +6,32 @@ Arytmetyka stałoprzecinkowa (ang. fixed-point arithmetic) reprezentuje liczby r
 
 Kluczową cechą jest funkcjonalny trade-off: zwiększenie precyzji wymaga zmniejszenia zakresu liczb całkowitych i vice versa. Arytmetyka stałoprzecinkowa była normą w kalkulatorach mechanicznych i pozostaje stosowana w systemy wbudowanych o ograniczonych możliwościach arytmetycznych (mikrokontrolery, FPGA) oraz w aplikacjach wymagających wysokiej szybkości lub niskiego poboru mocy, takich jak przetwarzanie obrazu i sygnałów cyfrowych.
 
+### Wartości ujemne 
+|            Sposób reprezentacji            |  Jak często stosowana w fixed-point? |                     Zalety w fixed-point                    |                  Wady w fixed-point                  |          Typowe zastosowanie w fixed-point         |
+|:------------------------------------------:|:------------------------------------:|:-----------------------------------------------------------:|:----------------------------------------------------:|:--------------------------------------------------:|
+| Unsigned (tylko dodatnie)                  | Bardzo często                        | Najprostsza, maksymalny zakres, najłatwiejsze operacje      | Brak liczb ujemnych                                  | Sensory, grafika 8/16-bit, wiele IoT, DSP          |
+| U2 (uzupełnienie do dwóch)                 | Najczęściej przy liczbach ze znakiem | Jednolite dodawanie/odejmowanie, łatwe przejście przez zero | Asymetryczny zakres (−N do N−1)                      | Prawie wszędzie tam, gdzie potrzebny jest znak     |
+| Sign-magnitude (znak + moduł)              | Rzadko                               | Intuicyjna reprezentacja znaku                              | Osobne przypadki przy dodawaniu/odejmowaniu, +0 i −0 | Bardzo rzadko w nowoczesnych systemach fixed-point |
+| Bias (przesunięcie)                        | Bardzo rzadko                        | Łatwe porównywanie w unsigned                               | Komplikuje dodawanie i odejmowanie                   | Praktycznie nieużywane w fixed-point               |
+| One's complement (uzupełnienie do jedynki) | Prawie nigdy                         | Historyczne                                                 | Dwa zera (+0 i −0), skomplikowane dodawanie          | Współcześnie praktycznie nieużywane                |
+
+### Zastosowania 
+|          Okres / dziedzina         | Czy arytmetyka stałoprzecinkowa była/ jest powszechnie używana? |                     Główne powody stosowania                    |            Aktualny stan (2025/2026)           |   |
+|:----------------------------------:|:---------------------------------------------------------------:|:---------------------------------------------------------------:|:----------------------------------------------:|---|
+| Gry i grafika 3D ≈1995–2008        | Bardzo często – dominująca metoda                               | Brak lub bardzo wolny FPU, dużo szybsze mnożenie i przesunięcia | Prawie całkowicie wyparte przez float/half     |   |
+| Gry na konsole 6–7 generacji       | Często (PSP, DS, Wii, częściowo PS3/X360)                       | Oszczędność cykli, przewidywalność zachowania                   | Już mocno zmarginalizowana                     |   |
+| Gry mobilne ≈2008–2015             | Bardzo często                                                   | Słabe/słabej jakości FPU w tanich SoC                           | Obecnie rzadko (od ≈2017–18 głównie float16)   |   |
+| Współczesne gry AAA (PC, PS5, XSX) | Prawie w ogóle nie używana                                      | GPU i CPU mają bardzo szybki float32/float16/half               | Używana tylko w bardzo specyficznych miejscach |   |
+| Mikrokontrolery niskiego końca     | Nadal bardzo często                                             | Brak FPU lub bardzo drogi/słaby FPU                             | Dominująca metoda                              |   |
+| IoT, czujniki, sterowniki silników | Bardzo często                                                   | Małe zużycie energii, przewidywalność, brak FPU                 | Nadal jeden z najpopularniejszych wyborów      |   |
+| DSP – przetwarzanie sygnałów       | Często (szczególnie fixed-point DSP)                            | Lepszy zakres dynamiczny niż float przy tej samej liczbie bitów | Nadal bardzo popularna                         |   |
+| FPGA, ASIC – dedykowane układy     | Bardzo często                                                   | Znacznie mniejsze zużycie zasobów logicznych                    | Jedna z podstawowych technik                   |   |
+| Automotive (silniki, ASIL-B/D)     | Bardzo często                                                   | Wymagania certyfikacji bezpieczeństwa, przewidywalność          | Bardzo mocno obecna                            |   |
+| AI na krawędzi (tinyML)            | Coraz częściej float16/int8, ale fixed-point wciąż żywy         | Oszczędność energii i pamięci                                   | Konkurencja int8/float16, ale fixed nie umarł  |   |
+
+Współcześnie arytmetyka stałoprzecinkowa jest nadal szeroko stosowana w systemach wbudowanych, IoT, automotive klasy bezpieczeństwa, tanich mikrokontrolerach bez FPU oraz w dedykowanych układach DSP/FPGA/ASIC.
+W typowych zastosowaniach graficznych i grach na nowoczesnym sprzęcie praktycznie całkowicie ustąpiła miejsca liczbom zmiennoprzecinkowym IEEE 754 (głównie float32 i float16/half).
+
 ## Arytmetyka zmiennoprzecinkowa
 
 Arytmetyka zmiennoprzecinkowa (ang. floating-point arithmetic) bazuje na notacji naukowej, reprezentując liczby w formacie: x = S · M · 2^E, gdzie S jest znakiem, M znormalizowaną mantysą (z przedziału [1, 2)), a E jest cechą (wykładnikiem). Mantysa i cecha są kodowane jako liczby stałoprzecinkowe, ale pozycja przecinka w liczbie całkowitej zmienia się wraz ze zmianą cech — stąd nazwa reprezentacji.
@@ -174,6 +200,14 @@ A complex number
 When encountered, a trap handler could decode the sNaN and return an index to the computed result. In practice, this approach is faced with many complications. The treatment of the sign bit of NaNs for some simple operations (such as absolute value) is different from that for arithmetic operations. Traps are not required by the standard.
 
 When an operation results in a quiet NaN, there is no indication that anything is unusual until the program checks the result and sees a NaN. That is, computation continues without any signal from the floating point unit (FPU) or library if floating-point is implemented in software. A signalling NaN will produce a signal, usually in the form of exception from the FPU. Whether the exception is thrown depends on the state of the FPU.
+
+## Wyjątki w IEEE 754
+
+- Invalid operation (operacja nie jest poprawna matematycznie)
+- Division by Zero (dzielenie przez zero)
+- Overflow (nadmiar wykładniczy – liczba zbyt duża)
+- Underflow (niedomiar, utrata precyzji przy liczbach bliskich 0)
+- Inexact (niedokładnośd – podczas operacji zaokrąglania)
 
 # Co ma zostać wymienione
 
