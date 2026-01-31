@@ -36,3 +36,7 @@ Po segmentacji fragmentu zainteresowania (np. guza), niezbędne jest **wyodrębn
 | EKG    | 0.15-150 Hz           | 5-10 mV   | Filtracja 50 Hz, normalizacja                    | Fale P, QRS, T; RR intervals       |
 | EEG    | 0.2-100 Hz            | 600 μV    | Filtracja pasmowa (pasma delta-gamma), artefakty | Moc spektralna, falkowa, entropija |
 | EMG    | 10-8000 Hz            | 0.1-1 mV  | Rektyfikacja, filtracja                          | RMS, cechy falkowe                 |
+
+## Czym jest pixel
+
+Pixel (z angielskiego picture element, w skrócie px, pel) to najmniejszy adresowalny element rasterowego obrazu cyfrowego lub najmniejsza jednostka manipulowana przez oprogramowanie w urządzeniach wyświetlających. W kontekście cyfrowego przetwarzania sygnałów i obrazów stanowi on fundamentalny budulec reprezentacji cyfrowej dwuwymiarowych danych przestrzennych.

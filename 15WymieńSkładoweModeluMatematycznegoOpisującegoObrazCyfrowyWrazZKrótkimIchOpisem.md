@@ -131,3 +131,7 @@ Histogram charakteryzuje kontrast i dynamikę obrazu – pokazuje, czy obraz jes
 - **Tonalną** (jakie wartości) 
 - **Kolorystyczną** (jakie kolory)
 - **Statystyczną** (jak rozłożone)
+
+## Czym jest pixel
+
+Pixel (z angielskiego picture element, w skrócie px, pel) to najmniejszy adresowalny element rasterowego obrazu cyfrowego lub najmniejsza jednostka manipulowana przez oprogramowanie w urządzeniach wyświetlających. W kontekście cyfrowego przetwarzania sygnałów i obrazów stanowi on fundamentalny budulec reprezentacji cyfrowej dwuwymiarowych danych przestrzennych.
